@@ -88,7 +88,7 @@ def save_id3(path,fields,artwork):
     if tags is None:
         if obj:obj.add_tags();tags=obj.tags
         else:tags=ID3()
-    for name,klass in (("Title",TIT2),("Artist",TPE1),("Album",TALB),("Genre",TCON),("Year",TDRC")):
+    for name,klass in (("Title",TIT2),("Artist",TPE1),("Album",TALB),("Genre",TCON),("Year",TDRC)):
         tags.delall(klass.__name__)
         if fields.get(name):tags.add(klass(encoding=3,text=[fields[name]]))
     tags.delall("TXXX:CATALOGNUMBER")
